@@ -10,7 +10,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"model": "node ./scripts/model.ts"
+		"model": "node ./scripts/model.js"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
