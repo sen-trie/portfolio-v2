@@ -1,0 +1,64 @@
+:root {
+	color-scheme: light dark;
+
+	--colour-dull-black: rgba(0, 0, 0, 0.3);
+	--colour-dim: rgba(0, 0, 0, 0.7);
+	--colour-bright: rgba(255, 255, 255, 0.7);
+	--colour-dull-bright: rgba(255, 255, 255, 0.3);
+
+	--light-bg: #f3ede5;
+	--light-text-strong: #2d1810;
+	--light-accent: #96573b;
+	--light-accent-strong: #442214;
+	--light-green: #bfdf9e;
+	--light-green-strong: #9dc275;
+	--light-green-deep: #2f4418;
+
+	--dark-bg: #1b1814;
+	--dark-text-strong: #fff3ef;
+	--dark-accent: #96573b;
+	--dark-accent-strong: #f3e1da;
+	--dark-green: #2f4418;
+	--dark-green-strong: #5b7440;
+	--dark-green-deep: #bfdf9e;
+
+	--screen-md: 768px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background: none;
+	border: none;
+
+	user-select: none;
+	-webkit-user-select: none; /* Safari and Chrome */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+
+	font-family: 'Nunito', sans-serif;
+	touch-action: manipulation;
+}
+
+body {
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+.flexbox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+a,
+button {
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
