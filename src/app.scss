@@ -65,6 +65,7 @@ button {
 
 .switch-side-button {
 	position: absolute;
+	z-index: 1;
 	background-color: black;
 	width: 64px;
 	height: 64px;

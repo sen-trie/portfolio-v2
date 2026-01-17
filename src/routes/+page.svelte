@@ -109,7 +109,7 @@
 		}
 
 		&.main {
-			height: 100dvh;
+			min-height: 100dvh;
 			transition: height 0.6s ease;
 		}
 	}
@@ -131,6 +131,7 @@
 				background-color 0.6s ease;
 
 			&.expanded {
+				position: relative;
 				cursor: auto;
 			}
 
@@ -142,7 +143,7 @@
 		.cover-all {
 			text-align: center;
 			position: absolute;
-			height: 100%;
+			height: 100dvh;
 			width: 100%;
 			z-index: 10;
 			background-color: hsl(37, 39%, 80%);
@@ -157,7 +158,7 @@
 
 			&.expanded {
 				background-color: hsl(307, 27%, 24%);
-				height: 200dvh;
+				height: fit-content;
 				clip-path: inset(0 0 0 0);
 			}
 
@@ -174,7 +175,7 @@
 
 			&.expanded {
 				background-color: hsl(159, 87%, 15%);
-				height: 200dvh;
+				height: fit-content;
 				clip-path: inset(0 0 0 0);
 			}
 
