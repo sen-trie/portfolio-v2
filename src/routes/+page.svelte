@@ -32,7 +32,6 @@
 	});
 
 	function handleClick(side) {
-		console.log(1);
 		clicked = true;
 		selectedSide = side;
 		greenSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -40,7 +39,10 @@
 </script>
 
 {#snippet switchSideButton()}
-	<button onclick={() => handleClick(selectedSide === 'left' ? 'right' : 'left')}>
+	<button
+		class="switch-side-button flexbox"
+		onclick={() => handleClick(selectedSide === 'left' ? 'right' : 'left')}
+	>
 		Switch Side
 	</button>
 {/snippet}
@@ -49,6 +51,7 @@
 	<section class="about">
 		<About />
 	</section>
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<section class="main flexbox" class:clicked bind:this={greenSection}>
 		{#if greenVisible}
 			<div
@@ -60,11 +63,13 @@
 				role="button"
 				tabindex="0"
 			>
-				{#if selectedSide === 'left'}
-					<div transition:fade={{ delay: 200, duration: 300 }}>
-						<Dev {switchSideButton} />
+				{#if !clicked}
+					<div class="cover-all flexbox" transition:fade={{ delay: 200, duration: 300 }}>
+						Explore Dev Work
 					</div>
 				{/if}
+				{@render switchSideButton()}
+				<Dev />
 			</div>
 			<div
 				class="main-art"
@@ -75,11 +80,13 @@
 				role="button"
 				tabindex="0"
 			>
-				{#if selectedSide === 'right'}
-					<div transition:fade={{ delay: 200, duration: 300 }}>
-						<Art {switchSideButton} />
+				{#if !clicked}
+					<div class="cover-all flexbox" transition:fade={{ delay: 200, duration: 300 }}>
+						Explore Art Work
 					</div>
 				{/if}
+				{@render switchSideButton()}
+				<Art />
 			</div>
 		{/if}
 	</section>
@@ -132,8 +139,19 @@
 			}
 		}
 
+		.cover-all {
+			text-align: center;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			z-index: 10;
+			background-color: hsl(37, 39%, 80%);
+			color: hsla(307, 27%, 24%, 1);
+			inset: 0;
+		}
+
 		.main-dev {
-			background-color: hsla(307, 27%, 24%, 0.7);
+			background-color: hsla(307, 27%, 24%, 1);
 			left: 0;
 			clip-path: inset(0 50% 0 0);
 
@@ -144,12 +162,13 @@
 			}
 
 			&.collapsed {
+				background-color: hsl(307, 27%, 24%);
 				clip-path: inset(0 100% 0 0);
 			}
 		}
 
 		.main-art {
-			background-color: hsl(159, 87%, 15%, 0.7);
+			background-color: hsl(159, 87%, 15%, 1);
 			right: 0;
 			clip-path: inset(0 0 0 50%);
 
@@ -160,7 +179,12 @@
 			}
 
 			&.collapsed {
+				background-color: hsl(159, 87%, 15%);
 				clip-path: inset(0 0 0 100%);
+			}
+
+			.cover-all {
+				flex-direction: row-reverse;
 			}
 		}
 	}
