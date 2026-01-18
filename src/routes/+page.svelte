@@ -69,7 +69,9 @@
 					</div>
 				{/if}
 				{@render switchSideButton()}
-				<Dev />
+				<div class="content-wrapper">
+					<Dev />
+				</div>
 			</div>
 			<div
 				class="main-art"
@@ -86,7 +88,9 @@
 					</div>
 				{/if}
 				{@render switchSideButton()}
-				<Art />
+				<div class="content-wrapper">
+					<Art />
+				</div>
 			</div>
 		{/if}
 	</section>
@@ -138,6 +142,11 @@
 			&.collapsed {
 				pointer-events: none;
 			}
+		}
+
+		.content-wrapper {
+			width: 1000px;
+			margin: 0 auto;
 		}
 
 		.cover-all {

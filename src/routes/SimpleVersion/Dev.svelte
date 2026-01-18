@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<h2>Graphics</h2>
+	<h2>Projects</h2>
 	<h3>Stills</h3>
 	<h4>Still images showcasing individual scenes or concepts.</h4>
 
