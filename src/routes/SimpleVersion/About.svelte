@@ -17,6 +17,14 @@
 			keeping things simple and reliable along the way.
 		</p>
 	</div>
+	<div>
+		<h2>Socials</h2>
+		<p>Github</p>
+		<p>Youtube</p>
+		<p>Reddit</p>
+		<p>Discord</p>
+		<p>Email</p>
+	</div>
 </div>
 
 <style lang="scss">
