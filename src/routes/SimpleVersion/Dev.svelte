@@ -110,21 +110,22 @@
 		flex-direction: row;
 		justify-content: flex-start;
 		height: fit-content;
-		border-bottom: 2px solid white;
+		border-bottom: 2px solid var(--text-main);
 		padding-bottom: 12px;
 		margin: 6px 0 8px;
 
 		.tech-svg {
 			height: 24px;
 			width: 24px;
-			margin-right: 6px;
-			fill: wheat;
+			margin-right: 8px;
 		}
 
 		span {
 			margin-right: 8px;
-			background-color: rgba(0, 0, 0, 0.3);
-			padding: 4px 8px;
+			background-color: #e19898;
+			color: #1c0e1a;
+			font-weight: 700;
+			padding: 4px 10px;
 			border-radius: calc(var(--border-radius) / 2);
 		}
 	}
