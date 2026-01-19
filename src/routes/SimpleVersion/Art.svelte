@@ -91,7 +91,7 @@
 	});
 </script>
 
-<h1>Graphics</h1>
+<h1 class="content-title">Graphics</h1>
 
 <ArtSection
 	title={'Featured Animations'}
@@ -171,6 +171,7 @@
 		display: block;
 		object-fit: cover;
 		margin-bottom: 10px;
+		filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
 	}
 
 	dialog {
@@ -178,6 +179,7 @@
 		background: transparent;
 		padding: 16px 16px;
 		margin: auto;
+		filter: drop-shadow(0 0 16px black);
 
 		&::backdrop {
 			background-color: rgba(0, 0, 0, 0.85);
@@ -209,6 +211,7 @@
 			justify-content: space-between;
 			background-color: #1a1a1a;
 			border-radius: 1rem;
+			overflow: hidden;
 
 			.video-container {
 				position: relative;

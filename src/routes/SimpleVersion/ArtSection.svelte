@@ -3,9 +3,7 @@
 </script>
 
 <div class="art-section">
-	<div class="body-container">
-		<h2 class="art-section-title">{title}</h2>
-	</div>
+	<h2 class="art-section-title">{title}</h2>
 	<div class="masonry-wrapper" class:expanded={showMore}>
 		<div class="art-grid">
 			{@render children()}
@@ -20,6 +18,7 @@
 	.art-section {
 		position: relative;
 		height: fit-content;
+		margin-bottom: 40px;
 	}
 
 	.masonry-wrapper {
@@ -27,6 +26,7 @@
 		max-height: 550px;
 		overflow-y: hidden;
 		transition: max-height 0.5s ease;
+		border: 2px solid rgba(255, 255, 255, 0.2);
 		border-radius: var(--border-radius);
 
 		&:not(.expanded)::after {
@@ -49,7 +49,7 @@
 
 	.art-grid {
 		height: 100%;
-		padding: 20px 16px;
+		padding: 32px 16px;
 		column-gap: 16px;
 		row-gap: 4px;
 
@@ -90,12 +90,10 @@
 		}
 	}
 
-	.body-container {
-		margin: 0 auto;
-		padding: 0 1.5rem;
-		max-width: calc(900px + 1.5rem);
-		text-align: center;
-		margin-bottom: 1rem;
+	.art-section-title {
+		margin: 1rem 0;
+		padding-top: 16px;
+		border-top: 2px solid white;
 	}
 
 	@media (max-width: 1200px) {

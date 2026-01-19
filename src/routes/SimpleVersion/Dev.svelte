@@ -1,5 +1,6 @@
 <script>
 	import { getContext } from 'svelte';
+	import { fly } from 'svelte/transition';
 
 	const images = getContext('images');
 
@@ -61,7 +62,7 @@
 	];
 </script>
 
-<h1>Projects</h1>
+<h1 class="content-title">Projects</h1>
 {#each devItems as project}
 	<div class="dev-block">
 		<div class="block-text">
@@ -89,6 +90,11 @@
 {/each}
 
 <style lang="scss">
+	.content-title {
+		padding-bottom: 16px;
+		border-bottom: 2px solid white;
+	}
+
 	.dev-block {
 		display: flex;
 		flex-direction: row;
@@ -98,6 +104,7 @@
 		padding: 16px 24px;
 		overflow: hidden;
 		background-color: hsla(0, 0%, 18%, 0.74);
+		border: 2px solid rgba(255, 255, 255, 0.2);
 		border-radius: var(--border-radius);
 
 		h3 {
@@ -147,6 +154,7 @@
 			width: 100%;
 			aspect-ratio: 16 / 10;
 			object-fit: cover;
+			filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
 		}
 
 		div {
