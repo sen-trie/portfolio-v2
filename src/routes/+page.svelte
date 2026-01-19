@@ -41,6 +41,7 @@
 {#snippet switchSideButton()}
 	<button
 		class="switch-side-button flexbox"
+		class:show-side={clicked}
 		onclick={() => handleClick(selectedSide === 'left' ? 'right' : 'left')}
 	>
 		Switch Side
@@ -51,8 +52,14 @@
 	<section class="about">
 		<About />
 	</section>
+	{@render switchSideButton()}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
-	<section class="main flexbox" class:clicked bind:this={greenSection}>
+	<section
+		class="main flexbox"
+		class:clicked
+		style:background-color={selectedSide ? '#054830' : '#f5f0e8'}
+		bind:this={greenSection}
+	>
 		{#if greenVisible}
 			<div
 				class="main-dev"
@@ -68,7 +75,7 @@
 						Explore Dev Work
 					</div>
 				{/if}
-				{@render switchSideButton()}
+				<!-- {@render switchSideButton()} -->
 				<div class="content-wrapper">
 					<Dev />
 				</div>
@@ -87,7 +94,7 @@
 						Explore Art Work
 					</div>
 				{/if}
-				{@render switchSideButton()}
+				<!-- {@render switchSideButton()} -->
 				<div class="content-wrapper">
 					<Art />
 				</div>
@@ -118,6 +125,26 @@
 		}
 	}
 
+	.switch-side-button {
+		position: sticky;
+		z-index: 10;
+		background-color: black;
+		width: 64px;
+		height: 64px;
+		border-radius: 100%;
+		top: 0px;
+		transform: translateY(24px);
+		margin-left: auto;
+		margin-right: 24px;
+		margin-bottom: -64px;
+		opacity: 0;
+		transition: 1s ease;
+
+		&.show-side {
+			opacity: 1;
+		}
+	}
+
 	.main {
 		position: relative;
 		color: white;
@@ -128,6 +155,7 @@
 			top: 0;
 			height: 100dvh;
 			width: 100%;
+			overflow: visible;
 			cursor: pointer;
 			transition:
 				height 0.6s ease,
@@ -156,7 +184,7 @@
 			width: 100%;
 			z-index: 10;
 			background-color: hsl(37, 39%, 80%);
-			color: hsla(307, 27%, 24%, 1);
+			color: #4e2d4a;
 			inset: 0;
 		}
 
@@ -178,7 +206,7 @@
 		}
 
 		.main-art {
-			background-color: hsl(159, 87%, 15%, 1);
+			background-color: #054830;
 			right: 0;
 			clip-path: inset(0 0 0 50%);
 
