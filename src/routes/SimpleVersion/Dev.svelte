@@ -129,8 +129,8 @@
 
 		span {
 			margin-right: 8px;
-			background-color: #e19898;
-			color: #1c0e1a;
+			background-color: rgba(0, 0, 0, 0.3);
+			color: #e19898;
 			font-weight: 700;
 			padding: 4px 10px;
 			border-radius: calc(var(--border-radius) / 2);
@@ -163,7 +163,9 @@
 			gap: 20px;
 
 			.visit-link {
-				background-color: rgba(0, 0, 0, 0.3);
+				background-color: #e19898;
+				color: #1c0e1a;
+				font-weight: 700;
 				padding: 10px 24px;
 				margin-top: 16px;
 				border: none;

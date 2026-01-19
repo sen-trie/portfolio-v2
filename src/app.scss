@@ -59,3 +59,12 @@ button {
 	text-decoration: none;
 	color: inherit;
 }
+
+.content-block {
+	max-width: calc(1000px + 1.5rem);
+	margin: 0 auto;
+}
+
+.content-title {
+	padding-top: 24px;
+}

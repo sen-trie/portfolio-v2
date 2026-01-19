@@ -1,4 +1,5 @@
 <script>
+	import { replaceState } from '$app/navigation';
 	import { fly, fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import About from './SimpleVersion/About.svelte';
@@ -26,15 +27,43 @@
 			observer.observe(greenSection);
 		}
 
+		const hash = window.location.hash.slice(1);
+		if (hash === 'dev' || hash === 'art') {
+			handleClick(hash === 'dev' ? 'left' : 'right');
+		}
+
+		const handleHashChange = () => {
+			const newHash = window.location.hash.slice(1);
+			if (newHash === 'dev') {
+				handleClick('left');
+			} else if (newHash === 'art') {
+				handleClick('right');
+			}
+		};
+
+		window.addEventListener('hashchange', handleHashChange);
+
 		return () => {
 			observer.disconnect();
+			window.removeEventListener('hashchange', handleHashChange);
 		};
 	});
 
 	function handleClick(side) {
+		const instantScroll = clicked;
+
 		clicked = true;
 		selectedSide = side;
-		greenSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+		const hash = side === 'left' ? '#dev' : '#art';
+		if (window.location.hash !== hash) {
+			replaceState(window.location.pathname + hash);
+		}
+
+		greenSection?.scrollIntoView({
+			behavior: instantScroll ? 'instant' : 'smooth',
+			block: 'start'
+		});
 	}
 </script>
 
@@ -75,8 +104,7 @@
 						Explore Dev Work
 					</div>
 				{/if}
-				<!-- {@render switchSideButton()} -->
-				<div class="content-wrapper">
+				<div class="content-block">
 					<Dev />
 				</div>
 			</div>
@@ -94,8 +122,7 @@
 						Explore Art Work
 					</div>
 				{/if}
-				<!-- {@render switchSideButton()} -->
-				<div class="content-wrapper">
+				<div class="content-block">
 					<Art />
 				</div>
 			</div>
@@ -105,10 +132,7 @@
 
 <style lang="scss">
 	.about {
-		div {
-			height: 100px;
-			width: 300px;
-		}
+		padding-bottom: 64px;
 	}
 
 	section {
