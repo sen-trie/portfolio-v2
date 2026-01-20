@@ -73,3 +73,13 @@ button {
 	background-size: 100% 32px;
 	background-position: 0 8px;
 }
+
+.click-button {
+	display: block;
+	padding: 10px 32px;
+	border: none;
+	border-radius: var(--border-radius);
+	transition: all 0.3s ease;
+	font-size: 1rem;
+	font-weight: 600;
+}

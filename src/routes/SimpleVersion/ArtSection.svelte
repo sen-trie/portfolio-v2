@@ -9,8 +9,8 @@
 			{@render children()}
 		</div>
 	</div>
-	<button class="show-more-btn" onclick={() => toggleFn()}>
-		{showMore ? 'Show Less' : 'Show More'}
+	<button class="click-button show-more-btn" onclick={() => toggleFn()}>
+		{showMore ? 'Show less' : 'Show more'}
 	</button>
 </div>
 
@@ -73,15 +73,9 @@
 	}
 
 	.show-more-btn {
-		display: block;
 		margin: 32px auto;
-		padding: 10px 32px;
 		background-color: #eed695;
 		color: #1d413c;
-		border: none;
-		border-radius: var(--border-radius);
-		font-size: 1rem;
-		cursor: pointer;
 		transition: all 0.3s ease;
 
 		&:hover {

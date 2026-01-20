@@ -151,6 +151,11 @@
 				<div class="content-block">
 					<Dev />
 				</div>
+				<div class="content-footer">
+					<button class="click-button" onclick={() => handleClick('right')}
+						>Switch to art side</button
+					>
+				</div>
 			</div>
 			<div
 				class="main-art notebook-div"
@@ -174,6 +179,11 @@
 				{/if}
 				<div class="content-block">
 					<Art />
+				</div>
+				<div class="content-footer">
+					<button class="click-button" onclick={() => handleClick('left')}
+						>Switch to dev side</button
+					>
 				</div>
 			</div>
 		{/if}
@@ -409,6 +419,40 @@
 				p {
 					background-color: #054830;
 					color: #b9c6ba;
+				}
+			}
+		}
+
+		.content-footer {
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			padding: 32px 0;
+			margin-top: 56px;
+
+			button {
+				margin: auto;
+				background-color: #e19898;
+				color: #1c0e1a;
+				font-size: 24px;
+				font-weight: 700;
+				padding: 12px 40px;
+				border-radius: var(--border-radius);
+
+				&:hover {
+					background-color: #1c0e1a;
+					color: #e19898;
+				}
+			}
+		}
+
+		.main-art {
+			.content-footer button {
+				background-color: #eed695;
+				color: #1d413c;
+
+				&:hover {
+					background-color: #1d413c;
+					color: #eed695;
 				}
 			}
 		}

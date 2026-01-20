@@ -80,9 +80,9 @@
 		<div class="block-pic flexbox">
 			<img src={images[`dev/${project.image}.png`]} alt={project.imageAlt} />
 			<div class="flexbox">
-				<a class="visit-link" href={project.repo} target="_blank">Visit Repo</a>
+				<a class="visit-link click-button" href={project.repo} target="_blank">Visit Repo</a>
 				{#if project.site}
-					<a class="visit-link" href={project.site} target="_blank">Visit Site</a>
+					<a class="visit-link click-button" href={project.site} target="_blank">Visit Site</a>
 				{/if}
 			</div>
 		</div>
@@ -148,6 +148,7 @@
 		aspect-ratio: 1.27;
 		flex-direction: column;
 		justify-content: flex-start;
+		gap: 16px;
 
 		img {
 			height: auto;
@@ -160,17 +161,17 @@
 		div {
 			height: fit-content;
 			flex-grow: 1;
-			gap: 20px;
+			gap: 32px;
 
 			.visit-link {
 				background-color: #e19898;
 				color: #1c0e1a;
-				font-weight: 700;
-				padding: 10px 24px;
-				margin-top: 16px;
-				border: none;
-				border-radius: var(--border-radius);
 				transition: all 0.3s ease;
+
+				&:hover {
+					background-color: #1c0e1a;
+					color: #e19898;
+				}
 			}
 		}
 	}
