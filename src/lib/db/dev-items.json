@@ -1,0 +1,62 @@
+[
+	{
+		"name": "Basil Club - Recipe Site",
+		"desc": "A personal recipe collection. Adapted recipes from well-known sources, organized for easy reference while baking.",
+		"tech": ["Svelte", "JavaScript"],
+		"repo": "https://github.com/sen-trie/basil-main",
+		"site": "https://www.basilclub.cafe/",
+		"image": "proj7",
+		"imageAlt": "Basil Club Recipe Project",
+		"year": "Nov 2025"
+	},
+	{
+		"name": "Basil Club - 3D Webapp",
+		"desc": "An interactive 3D café. Contains multiple interactables and references, inspired by personal experiences.",
+		"tech": ["Threlte", "Three"],
+		"repo": "https://github.com/sen-trie/basil-club",
+		"site": "https://explore.basilclub.cafe/",
+		"image": "proj6",
+		"imageAlt": "Basil Club 3D Project",
+		"year": "Jul 2025 - Nov 2025"
+	},
+	{
+		"name": "BrushHub",
+		"desc": "A frontend showcase aimed at demonstrating the concept and user experience of an artwork commissioning platform.",
+		"tech": ["Svelte", "Tailwind", "TypeScript"],
+		"repo": "https://github.com/sen-trie/brushhub",
+		"site": "https://sen-trie.github.io/brushhub/",
+		"image": "proj5",
+		"imageAlt": "BrushHub Project",
+		"year": "Nov 2024 - Feb 2025"
+	},
+	{
+		"name": "nahidaQuest!",
+		"desc": "An incremental game based on the popular hit Genshin Impact, built entirely from scratch. Playable on modern desktop and mobile browsers.",
+		"tech": ["HTML", "CSS", "JavaScript"],
+		"repo": "https://github.com/sen-trie/nahidaQuest",
+		"site": "https://nahidaquest.com/",
+		"image": "proj1",
+		"imageAlt": "nahidaQuest Project",
+		"year": "Jan 2023 - Jun 2024"
+	},
+	{
+		"name": "2D Heat Diffusion",
+		"desc": "Simulates heat transfer by conduction through a two dimensional plate. Computationally solves the heat partial differential equation and visualizes the solution as a heatmap.",
+		"tech": ["MATLAB"],
+		"repo": "https://github.com/sen-trie/2d-heat-diffusion",
+		"site": null,
+		"image": "proj2",
+		"imageAlt": "Matlab Project",
+		"year": "May 2024"
+	},
+	{
+		"name": "The Lair",
+		"desc": "A fictional online storefront set in a world populated by vampires.",
+		"tech": ["React", "JavaScript"],
+		"repo": "https://github.com/sen-trie/shopping-cart",
+		"site": "https://sen-trie.github.io/shopping-cart/",
+		"image": "proj3",
+		"imageAlt": "Storefront Project",
+		"year": "Jul 2023"
+	}
+]
