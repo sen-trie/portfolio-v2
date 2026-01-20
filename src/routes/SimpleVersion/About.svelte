@@ -37,12 +37,12 @@
 
 <div class="flexbox about-block content-block">
 	<div class="flexbox profile-blurb">
-		<img src={images['dev_pp.png']} alt="dev profile" />
+		<img src={images['light_dev.jpg']} alt="dev profile" />
 		<h1>Sentrie's Portfolio</h1>
-		<img src={images['art_pp.png']} alt="art profile" />
+		<img src={images['light_art.jpg']} alt="art profile" />
 	</div>
-	<div>
-		<h2>About</h2>
+	<div class="text-block">
+		<h2>About Me</h2>
 		<h3>
 			I'm a self-taught <strong>frontend web developer</strong> focused on building
 			<u>clean, functional interfaces</u>. I enjoy <u>learning through projects</u> and consistently
@@ -61,7 +61,7 @@
 		</h3>
 	</div>
 	<div class="social-block">
-		<p>Based in Singapore 🇸🇬</p>
+		<p><i>Based in Singapore 🇸🇬</i></p>
 		<div class="flexbox social-links">
 			{#each Object.entries(socials) as social}
 				<a href={social[1]} target="_blank" aria-label="link" rel="noopener noreferrer">
@@ -115,10 +115,11 @@
 	.profile-blurb {
 		height: 80px;
 		width: fit-content;
-		gap: 32px;
-		border: 2px solid rgba(0, 0, 0, 0.7);
+		gap: 20px;
+		border: 2px solid rgba(0, 0, 0, 0.3);
+		background-color: hsla(0, 0%, 98%, 1);
 		border-radius: var(--border-radius);
-		margin-bottom: 16px;
+		overflow: hidden;
 
 		img {
 			height: 100%;
@@ -126,6 +127,15 @@
 			aspect-ratio: 1;
 			object-fit: contain;
 			background-color: #333;
+			box-sizing: content-box;
+
+			&:first-of-type {
+				border-right: 4px solid wheat;
+			}
+
+			&:last-of-type {
+				border-left: 4px solid wheat;
+			}
 		}
 	}
 
@@ -135,8 +145,16 @@
 		text-align: left;
 	}
 
-	h2 {
-		margin: 24px 0 8px;
+	.text-block {
+		padding: 28px 28px;
+		margin-top: 40px;
+		background-color: hsla(0, 0%, 98%, 1);
+		border-radius: var(--border-radius);
+		border: 2px solid rgba(0, 0, 0, 0.2);
+
+		h2 {
+			margin-bottom: 12px;
+		}
 	}
 
 	.about-block {
@@ -146,7 +164,7 @@
 
 		h3 {
 			margin-top: 4px;
-			line-height: 32px;
+			line-height: 36px;
 		}
 	}
 
@@ -155,7 +173,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		width: 100%;
-		margin: 64px 0 16px;
+		margin: 72px 0 16px;
 		gap: 8px;
 		align-items: center;
 
@@ -171,7 +189,8 @@
 	.social-links {
 		position: relative;
 		width: fit-content;
-		border: 2px solid rgba(0, 0, 0, 0.7);
+		background-color: #f5f0e8;
+		border: 2px solid rgba(0, 0, 0, 0.3);
 		border-radius: var(--border-radius);
 		gap: 8px;
 		padding: 4px;
@@ -219,7 +238,7 @@
 
 	.scroll-container {
 		position: absolute;
-		bottom: 40px;
+		bottom: 38px;
 
 		svg {
 			animation-name: floating;
@@ -234,7 +253,7 @@
 			transform: translate(0);
 		}
 		50% {
-			transform: translateY(15px);
+			transform: translateY(8px);
 		}
 		100% {
 			transform: translate(0);

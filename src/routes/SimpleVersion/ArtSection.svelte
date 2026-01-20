@@ -91,9 +91,13 @@
 	}
 
 	.art-section-title {
-		margin: 1rem 0;
-		padding-top: 16px;
+		margin: 24px 0;
+		padding-top: 28px;
 		border-top: 2px solid white;
+	}
+
+	.art-section-title:first-of-type {
+		margin-top: 16px;
 	}
 
 	@media (max-width: 1200px) {

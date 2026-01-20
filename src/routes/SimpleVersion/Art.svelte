@@ -218,7 +218,7 @@
 				width: 60%;
 				height: auto;
 
-				padding-bottom: 56.25%;
+				padding-bottom: 50%;
 				overflow: hidden;
 
 				iframe {
