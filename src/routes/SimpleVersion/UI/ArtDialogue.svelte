@@ -1,8 +1,16 @@
 <script>
-	let { key, content = {}, closeDialog, isLoading, handleLoad, cycleKeys } = $props();
+	let {
+		key,
+		content = {},
+		closeDialog,
+		isLoading,
+		handleLoad,
+		cycleKeys,
+		videoInfoEl = $bindable()
+	} = $props();
 </script>
 
-<button class="close-btn" onclick={closeDialog} aria-label="close-dialog">
+<button class="close-btn" onclick={closeDialog} aria-label="close-dialog" bind:this={videoInfoEl}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="20"
@@ -131,6 +139,7 @@
 			padding: 20px 28px;
 			max-height: 100%;
 			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
 
 			h4 {
 				margin: 6px 0 20px;

@@ -73,6 +73,8 @@
 	}
 
 	.show-more-btn {
+		position: relative;
+		z-index: 5;
 		margin: 32px auto;
 		background-color: #eed695;
 		color: #1d413c;

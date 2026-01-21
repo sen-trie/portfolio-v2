@@ -62,6 +62,8 @@
 			];
 	}
 
+	let videoInfoEl = $state(null);
+
 	function openDialog(e, newKey) {
 		e.preventDefault();
 		if (!dialogEl) return;
@@ -69,7 +71,13 @@
 		key = newKey;
 		isLoading = true;
 		dialogEl.showModal();
-		disableBodyScroll(document.body, { reserveScrollBarGap: true });
+		// disableBodyScroll(document.body, { reserveScrollBarGap: true });
+
+		// setTimeout(() => {
+		// 	if (videoInfoEl) {
+		// 		enableBodyScroll(videoInfoEl);
+		// 	}
+		// }, 100);
 	}
 
 	function closeDialog() {
@@ -77,7 +85,7 @@
 
 		key = '';
 		dialogEl.close();
-		enableBodyScroll(document.body);
+		// clearAllBodyScrollLocks();
 	}
 
 	onMount(() => {
@@ -127,6 +135,7 @@
 		{closeDialog}
 		{isLoading}
 		{cycleKeys}
+		bind:videoInfoEl
 		handleLoad={() => {
 			isLoading = false;
 		}}
@@ -200,7 +209,8 @@
 			flex-direction: column;
 			justify-content: space-between;
 			height: 100dvh;
-			padding: 48px 0 40px;
+			gap: 24px;
+			padding: 48px 0 20px;
 		}
 	}
 </style>

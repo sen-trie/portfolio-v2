@@ -96,8 +96,6 @@
 				fill="#000000"
 				version="1.1"
 				id="Capa_1"
-				width="24"
-				height="24"
 				viewBox="0 0 30.727 30.727"
 				xml:space="preserve"
 			>
@@ -148,9 +146,11 @@
 	.text-block {
 		padding: 28px 28px;
 		margin-top: 40px;
-		background-color: hsla(0, 0%, 98%, 1);
+		background-color: #f7f7f7;
 		border-radius: var(--border-radius);
 		border: 2px solid rgba(0, 0, 0, 0.2);
+		max-height: 60dvh;
+		overflow-y: auto;
 
 		h2 {
 			margin-bottom: 12px;
@@ -241,6 +241,8 @@
 		bottom: 38px;
 
 		svg {
+			width: 24px;
+			height: 24px;
 			animation-name: floating;
 			animation-duration: 2s;
 			animation-iteration-count: infinite;
@@ -287,6 +289,7 @@
 		.text-block {
 			margin-top: 24px;
 			padding: 20px 16px;
+			max-height: 50dvh;
 		}
 
 		.social-block {
@@ -308,9 +311,19 @@
 		.social-links {
 			gap: 4px;
 
+			.social-link {
+				width: 40px;
+				height: 40px;
+			}
+
 			p {
 				display: none;
 			}
+		}
+
+		.scroll-container svg {
+			width: 16px;
+			height: 16px;
 		}
 	}
 </style>

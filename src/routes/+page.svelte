@@ -442,6 +442,8 @@
 		}
 
 		.content-footer {
+			position: relative;
+			z-index: 5;
 			background-color: rgba(0, 0, 0, 0.5);
 			width: 100%;
 			padding: 32px 0;
@@ -451,7 +453,7 @@
 				margin: auto;
 				background-color: #e19898;
 				color: #1c0e1a;
-				font-size: 24px;
+				font-size: 20px;
 				font-weight: 700;
 				padding: 12px 40px;
 				border-radius: var(--border-radius);
