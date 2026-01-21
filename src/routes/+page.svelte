@@ -77,8 +77,6 @@
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
-					width="24"
-					height="24"
 					viewBox="0 0 24 24"
 					stroke-width="2"
 					stroke="currentColor"
@@ -96,8 +94,6 @@
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
-					width="24"
-					height="24"
 					viewBox="0 0 24 24"
 					stroke-width="2"
 					stroke="currentColor"
@@ -249,6 +245,11 @@
 		background: transparent;
 		border: none;
 		overflow: visible;
+
+		svg {
+			width: 24px;
+			aspect-ratio: 1;
+		}
 
 		&.show-side {
 			opacity: 1;
@@ -471,6 +472,40 @@
 					background-color: #1d413c;
 					color: #eed695;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.main .content-footer {
+			padding: 24px 0;
+
+			button {
+				font-size: 18px;
+			}
+		}
+
+		.main .cover-all p {
+			font-size: 16px;
+		}
+
+		.switch-side-button {
+			margin-right: 20px;
+			height: 40px;
+			margin-bottom: -40px;
+
+			svg {
+				width: 20px;
+			}
+
+			.button-front,
+			.button-back {
+				font-size: 14px;
+				padding: 0 20px;
+			}
+
+			.button-inner {
+				bottom: 12px;
 			}
 		}
 	}

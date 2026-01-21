@@ -6,9 +6,19 @@
 	const images = getContext('images');
 </script>
 
+{#snippet visitLinks(project)}
+	<a class="visit-link click-button" href={project.repo} target="_blank">Visit Repo</a>
+	{#if project.site}
+		<a class="visit-link click-button" href={project.site} target="_blank">Visit Site</a>
+	{/if}
+{/snippet}
+
 <h1 class="content-title">Projects</h1>
 {#each devItems as project}
 	<div class="dev-block">
+		<div class="mobile-link flexbox">
+			{@render visitLinks(project)}
+		</div>
 		<div class="block-text">
 			<div class="block-top">
 				<div class="flexbox block-title">
@@ -32,11 +42,8 @@
 		</div>
 		<div class="block-pic flexbox">
 			<img src={images[`dev/${project.image}.png`]} alt={project.imageAlt} />
-			<div class="flexbox">
-				<a class="visit-link click-button" href={project.repo} target="_blank">Visit Repo</a>
-				{#if project.site}
-					<a class="visit-link click-button" href={project.site} target="_blank">Visit Site</a>
-				{/if}
+			<div class="desktop-link flexbox">
+				{@render visitLinks(project)}
 			</div>
 		</div>
 	</div>
@@ -70,12 +77,15 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
+		flex-wrap: wrap;
+		row-gap: 8px;
 		height: fit-content;
-		margin-top: 6px;
+		margin-top: 8px;
 
 		.tech-svg {
 			height: 24px;
-			width: 24px;
+			width: auto;
+			aspect-ratio: 1;
 			margin-right: 8px;
 		}
 
@@ -126,22 +136,83 @@
 			object-fit: cover;
 			filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
 		}
+	}
 
-		div {
-			height: fit-content;
-			flex-grow: 1;
-			gap: 32px;
+	.desktop-link,
+	.mobile-link {
+		height: fit-content;
+		flex-grow: 1;
+		gap: 32px;
 
-			.visit-link {
-				background-color: #e19898;
-				color: #1c0e1a;
-				transition: all 0.3s ease;
+		.visit-link {
+			background-color: #e19898;
+			color: #1c0e1a;
+			transition: all 0.3s ease;
 
-				&:hover {
-					background-color: #1c0e1a;
-					color: #e19898;
-				}
+			&:hover {
+				background-color: #1c0e1a;
+				color: #e19898;
 			}
+		}
+	}
+
+	.mobile-link {
+		display: none;
+		justify-content: space-evenly;
+		margin-top: 8px;
+		gap: 16px;
+	}
+
+	@media (max-width: 768px) {
+		.dev-block {
+			flex-direction: column-reverse;
+			padding: 20px 16px;
+
+			.block-desc {
+				padding-top: 12px;
+			}
+		}
+
+		.block-ingredients {
+			font-size: 14px;
+			row-gap: 6px;
+			margin-top: 10px;
+
+			.tech-svg {
+				height: 20px;
+				margin-right: 6px;
+			}
+		}
+
+		.block-name {
+			max-width: 50%;
+		}
+
+		.block-pic {
+			height: unset;
+			width: 100%;
+			aspect-ratio: unset;
+			margin-bottom: 12px;
+
+			img {
+				aspect-ratio: 16 / 9;
+			}
+		}
+
+		.block-text {
+			width: 100%;
+
+			.block-date {
+				font-size: 12px;
+			}
+		}
+
+		.desktop-link {
+			display: none;
+		}
+
+		.mobile-link {
+			display: flex;
 		}
 	}
 </style>

@@ -94,15 +94,16 @@
 		margin-top: 16px;
 	}
 
-	@media (max-width: 1200px) {
-		.art-grid {
-			column-count: 3;
+	@media (max-width: 768px) {
+		:global(.art-grid .art-grid-item) {
+			max-width: unset !important;
+			height: 175px;
 		}
-	}
 
-	@media (max-width: 992px) {
 		.art-grid {
-			column-count: 2;
+			padding: 20px 16px;
+			column-gap: 8px;
+			row-gap: 0px;
 		}
 	}
 </style>

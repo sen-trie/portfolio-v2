@@ -70,13 +70,13 @@
 	.dialog-next {
 		margin-top: 32px;
 		justify-content: center;
+		font-size: 20px;
 		gap: 64px;
 		pointer-events: none;
 
 		button {
 			background-color: color-mix(in oklab, #054830 100%, hsl(0, 0%, 100%) 10%);
 			color: white;
-			font-size: 20px;
 			padding: 12px 40px;
 			pointer-events: all;
 
@@ -142,6 +142,36 @@
 			h3 {
 				font-weight: 400;
 			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.dialog-content {
+			flex-direction: column;
+			width: 100%;
+			max-height: calc(100dvh - 0px);
+			justify-content: flex-start;
+
+			.video-container,
+			.video-info {
+				width: 100%;
+			}
+
+			.video-container {
+				padding-bottom: 55%;
+			}
+
+			.video-info {
+				height: fit-content;
+				max-height: 50dvh;
+				padding: 16px 20px;
+			}
+		}
+
+		.dialog-next {
+			gap: 24px;
+			font-size: 12px;
+			margin-top: 0;
 		}
 	}
 </style>

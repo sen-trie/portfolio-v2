@@ -276,4 +276,41 @@
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		.profile-blurb {
+			height: 60px;
+			max-width: 100dvw;
+			gap: 12px;
+		}
+
+		.text-block {
+			margin-top: 24px;
+			padding: 20px 16px;
+		}
+
+		.social-block {
+			margin-top: 24px;
+			gap: 12px;
+
+			i {
+				font-size: 13px;
+			}
+		}
+
+		.about-block {
+			h3 {
+				line-height: unset;
+				font-size: 15px;
+			}
+		}
+
+		.social-links {
+			gap: 4px;
+
+			p {
+				display: none;
+			}
+		}
+	}
 </style>

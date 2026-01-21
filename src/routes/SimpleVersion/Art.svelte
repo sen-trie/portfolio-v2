@@ -189,4 +189,18 @@
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		.art-img {
+			height: 150px;
+		}
+
+		dialog {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100dvh;
+			padding: 48px 0 40px;
+		}
+	}
 </style>

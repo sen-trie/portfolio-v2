@@ -87,3 +87,29 @@ button {
 	font-size: 1rem;
 	font-weight: 600;
 }
+
+@media (max-width: 768px) {
+	.content-block {
+		padding: 0 12px;
+	}
+
+	.content-title {
+		padding-top: 24px;
+	}
+
+	h1 {
+		font-size: 20px;
+	}
+
+	h2 {
+		font-size: 18px;
+	}
+
+	h3 {
+		font-size: 15px;
+	}
+
+	.click-button {
+		font-size: 14px;
+	}
+}
