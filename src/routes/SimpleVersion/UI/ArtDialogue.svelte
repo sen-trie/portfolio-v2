@@ -70,7 +70,7 @@
 	.dialog-next {
 		margin-top: 32px;
 		justify-content: center;
-		gap: 32px;
+		gap: 64px;
 		pointer-events: none;
 
 		button {

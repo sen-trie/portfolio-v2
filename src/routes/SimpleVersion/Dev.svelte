@@ -28,7 +28,7 @@
 					{/each}
 				</div>
 			</div>
-			<h3 class="block-desc">{project.desc}</h3>
+			<h3 class="block-desc">{@html project.desc}</h3>
 		</div>
 		<div class="block-pic flexbox">
 			<img src={images[`dev/${project.image}.png`]} alt={project.imageAlt} />

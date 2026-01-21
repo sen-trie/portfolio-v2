@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Basil Club - Recipe Site",
-		"desc": "A personal recipe collection. Adapted recipes from well-known sources, organized for easy reference while baking.",
+		"desc": "A personal recipe collection. Adapted recipes from well-known sources, organized for easy reference while baking.<br/><br/>I wanted to create a 'clean' version of my recipes, since many online recipe websites are cluttered with ads and lengthy stories.",
 		"tech": ["Svelte", "JavaScript"],
 		"repo": "https://github.com/sen-trie/basil-main",
 		"site": "https://www.basilclub.cafe/",
@@ -11,7 +11,7 @@
 	},
 	{
 		"name": "Basil Club - 3D Webapp",
-		"desc": "An interactive 3D café. Contains multiple interactables and references, inspired by personal experiences.",
+		"desc": "An interactive 3D café. Contains multiple interactables and references, inspired by personal experiences.<br/><br/>I wanted to explore creative web development, especially since I had prior experience in 3D software. The project taught me how to optimize 3D assets for performance, and how to create an immersive experience.",
 		"tech": ["Threlte", "Three"],
 		"repo": "https://github.com/sen-trie/basil-club",
 		"site": "https://explore.basilclub.cafe/",
@@ -21,7 +21,7 @@
 	},
 	{
 		"name": "BrushHub",
-		"desc": "A frontend showcase aimed at demonstrating the concept and user experience of an artwork commissioning platform.",
+		"desc": "A frontend showcase aimed at demonstrating the concept and user experience of an artwork commissioning platform.<br/><br/>This project was practice for proper UX/UI design based on an initial Figma draft.",
 		"tech": ["Svelte", "Tailwind", "TypeScript"],
 		"repo": "https://github.com/sen-trie/brushhub",
 		"site": "https://sen-trie.github.io/brushhub/",
@@ -31,7 +31,7 @@
 	},
 	{
 		"name": "nahidaQuest!",
-		"desc": "An incremental game based on the popular hit Genshin Impact, built entirely from scratch. Playable on modern desktop and mobile browsers.",
+		"desc": "An incremental game based on the popular hit Genshin Impact, built entirely from scratch. Playable on modern desktop and mobile browsers.<br/><br/>I learned much of the basics of web development from this project, as I didn't rely on many external libraries or frameworks.",
 		"tech": ["HTML", "CSS", "JavaScript"],
 		"repo": "https://github.com/sen-trie/nahidaQuest",
 		"site": "https://nahidaquest.com/",
@@ -41,7 +41,7 @@
 	},
 	{
 		"name": "2D Heat Diffusion",
-		"desc": "Simulates heat transfer by conduction through a two dimensional plate. Computationally solves the heat partial differential equation and visualizes the solution as a heatmap.",
+		"desc": "Simulates heat transfer by conduction through a two dimensional plate. Computationally solves the heat partial differential equation and visualizes the solution as a heatmap.<br/><br/>This was my first time using a scientific computing platform, and it was important for learning data analysis and numerical methods for solving real-world problems.",
 		"tech": ["MATLAB"],
 		"repo": "https://github.com/sen-trie/2d-heat-diffusion",
 		"site": null,
@@ -51,7 +51,7 @@
 	},
 	{
 		"name": "The Lair",
-		"desc": "A fictional online storefront set in a world populated by vampires.",
+		"desc": "A fictional online storefront set in a world populated by vampires.<br/><br/>This was my first time using a web framework, with the project focused on learning how to maintain a consistent theme throughout the user experience.",
 		"tech": ["React", "JavaScript"],
 		"repo": "https://github.com/sen-trie/shopping-cart",
 		"site": "https://sen-trie.github.io/shopping-cart/",
