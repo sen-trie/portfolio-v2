@@ -8,48 +8,65 @@
 		cycleKeys,
 		videoInfoEl = $bindable()
 	} = $props();
+
+	let dialogWrapper;
 </script>
 
-<button class="close-btn" onclick={closeDialog} aria-label="close-dialog" bind:this={videoInfoEl}>
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="20"
-		height="20"
-		viewBox="0 0 24 24"
-		stroke-width="2"
-		stroke="currentColor"
-		fill="none"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-	>
-		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-		<path d="M18 6l-12 12" />
-		<path d="M6 6l12 12" />
-	</svg>
-</button>
+{#snippet closeButton()}
+	<button class="close-btn" onclick={closeDialog} aria-label="close-dialog" bind:this={videoInfoEl}>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+			viewBox="0 0 24 24"
+			stroke-width="2"
+			stroke="currentColor"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M18 6l-12 12" />
+			<path d="M6 6l12 12" />
+		</svg>
+	</button>
+{/snippet}
 
-<div class="dialog-content">
-	{#key key}
-		<div class="video-container">
-			{#if isLoading}
-				<div class="iframe-loader">Loading...</div>
-			{/if}
+<div class="close-button-wrapper">
+	{@render closeButton()}
+</div>
 
-			<iframe
-				src={content['url']}
-				title="YouTube video player"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-				onload={handleLoad}
-			></iframe>
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+<div
+	class="dialog-wrapper flexbox"
+	bind:this={dialogWrapper}
+	onclick={(e) => e.target === dialogWrapper && closeDialog()}
+>
+	<div class="dialog-content">
+		{#key key}
+			<div class="video-container">
+				{#if isLoading}
+					<div class="iframe-loader">Loading...</div>
+				{/if}
+
+				<iframe
+					src={content['url']}
+					title="YouTube video player"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					onload={handleLoad}
+				></iframe>
+			</div>
+		{/key}
+
+		<div class="video-info">
+			<h2>{content['title']}</h2>
+			<h4><i>{content['date']}</i></h4>
+			<h3>{@html content['desc']}</h3>
 		</div>
-	{/key}
 
-	<div class="video-info">
-		<h2>{content['title']}</h2>
-		<h4><i>{content['date']}</i></h4>
-		<h3>{@html content['desc']}</h3>
+		{@render closeButton()}
 	</div>
 </div>
 
@@ -59,11 +76,22 @@
 </div>
 
 <style lang="scss">
+	.dialog-wrapper {
+		flex-grow: 1;
+		overflow: hidden;
+		padding: 32px 16px;
+		max-height: max(1000px, calc(100dvh - 24rem));
+	}
+
+	.close-button-wrapper {
+		display: none;
+	}
+
 	.close-btn {
 		position: absolute;
 		z-index: 99;
-		right: 0;
-		top: 0;
+		right: -16px;
+		top: -16px;
 		background: rgba(0, 0, 0, 0.7);
 		border: 2px solid hsla(0, 0%, 100%, 0.5);
 		border-radius: var(--border-radius);
@@ -98,24 +126,21 @@
 	.dialog-content {
 		position: relative;
 		display: flex;
-		width: 1200px;
-		max-height: calc(100dvh - 24rem);
+		margin: 0 auto;
+		width: min(100%, 1200px);
+		min-height: 50dvh;
+		max-height: 100%;
 		justify-content: space-between;
 		background-color: color-mix(in oklab, #054830 20%, hsl(0, 0%, 5%) 100%);
 		border-radius: var(--border-radius) 0 0 var(--border-radius);
-		overflow: hidden;
 
 		.video-container {
 			position: relative;
 			width: 60%;
 			height: auto;
-			padding-bottom: 50%;
 			overflow: hidden;
 
 			iframe {
-				position: absolute;
-				top: 0;
-				left: 0;
 				width: 100%;
 				height: 100%;
 				border: none;
@@ -166,8 +191,9 @@
 				width: 100%;
 			}
 
-			.video-container {
-				padding-bottom: 55%;
+			.video-container,
+			iframe {
+				min-height: 30dvh;
 			}
 
 			.video-info {
@@ -175,12 +201,25 @@
 				max-height: 50dvh;
 				padding: 16px 20px;
 			}
+
+			.close-btn {
+				display: none;
+			}
 		}
 
 		.dialog-next {
 			gap: 24px;
 			font-size: 12px;
 			margin-top: 0;
+		}
+
+		.close-button-wrapper {
+			display: block;
+
+			.close-btn {
+				right: 0;
+				top: 16px;
+			}
 		}
 	}
 </style>

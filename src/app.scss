@@ -29,6 +29,22 @@
 	--border-radius: 8px;
 }
 
+@font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 1000;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 1000;
+	font-style: italic;
+	font-display: swap;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -38,6 +54,11 @@
 
 	font-family: 'Nunito', sans-serif;
 	touch-action: manipulation;
+}
+
+html {
+	scrollbar-gutter: stable;
+	background-color: black;
 }
 
 body {
@@ -77,6 +98,7 @@ button {
 
 button {
 	user-select: none;
+	-webkit-user-select: none;
 }
 
 .content-block {

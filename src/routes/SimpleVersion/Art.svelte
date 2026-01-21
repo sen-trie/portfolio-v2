@@ -1,5 +1,4 @@
 <script>
-	import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 	import { getContext, onMount } from 'svelte';
 	import ArtSection from './UI/ArtSection.svelte';
 	import VideoPic from './UI/ClipsPic.svelte';
@@ -71,13 +70,6 @@
 		key = newKey;
 		isLoading = true;
 		dialogEl.showModal();
-		// disableBodyScroll(document.body, { reserveScrollBarGap: true });
-
-		// setTimeout(() => {
-		// 	if (videoInfoEl) {
-		// 		enableBodyScroll(videoInfoEl);
-		// 	}
-		// }, 100);
 	}
 
 	function closeDialog() {
@@ -85,7 +77,6 @@
 
 		key = '';
 		dialogEl.close();
-		// clearAllBodyScrollLocks();
 	}
 
 	onMount(() => {
@@ -128,7 +119,11 @@
 	{/each}
 </ArtSection>
 
-<dialog bind:this={dialogEl} onclick={(e) => e.target === dialogEl && closeDialog()}>
+<dialog
+	class="flexbox"
+	bind:this={dialogEl}
+	onclick={(e) => e.target === dialogEl && closeDialog()}
+>
 	<ArtDialogue
 		{key}
 		content={featuredData[key]}
@@ -158,9 +153,13 @@
 	$transition-duration: 0.3s;
 
 	dialog {
+		height: 100dvh;
+		max-height: 100dvh;
+		flex-direction: column;
+		justify-content: space-between;
 		border: none;
 		background: transparent;
-		padding: 16px 16px;
+		padding: 64px 16px;
 		margin: auto;
 		filter: drop-shadow(0 0 16px black);
 		transition:
@@ -208,7 +207,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			height: 100dvh;
+
 			gap: 24px;
 			padding: 48px 0 20px;
 		}

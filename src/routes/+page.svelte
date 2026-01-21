@@ -58,6 +58,11 @@
 		clicked = true;
 		selectedSide = side;
 
+		const hash = side === 'left' ? '#dev' : '#art';
+		if (window.location.hash !== hash) {
+			replaceState(window.location.pathname + hash);
+		}
+
 		greenSection?.scrollIntoView({
 			behavior: instantScroll ? 'instant' : 'smooth',
 			block: 'start'

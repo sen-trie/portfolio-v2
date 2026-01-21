@@ -2,7 +2,7 @@
 	"tb7": {
 		"title": "Divine Space Battle",
 		"date": "Nov 2025 - Jan 2026",
-		"desc": "This project was my first foray into fast-paced animation, re-enacting a battle from the <i>Touhou Project</i>.<br/><br/>Following a one-year hiatus from animation, I used this project to completely re-evaluate my workflow. A major breakthrough was introducing a dedicated 'pre-production' phase, which utilizing blocking and animatics. It was instrumental in smoothing out the pacing. Additionally, because the choreography is original, I leaned heavily on a wider range of references for inspiration and movement logic.<br/><br/>On the technical side, I studied cinematography techniques to enhance the sense of motion, specifically focusing on shot composition and dynamic camera work. I also placed a much heavier emphasis on post-production, utilizing VFX and layered SFX to heighten the intensity of the combat.",
+		"desc": "This project was my first foray into fast-paced animation, re-enacting a battle from the <i>Touhou Project</i>.<br/><br/>Following a one-year hiatus from animation, I used this project to completely re-evaluate my workflow. A major breakthrough was introducing a dedicated pre-production phase, utilizing blocking and animatics. It was instrumental in smoothing out the pacing. Additionally, because the choreography was original, I leaned heavily on a wider range of references for inspiration and movement logic.<br/><br/>On the technical side, I studied cinematography techniques to enhance the sense of motion, specifically shot composition and dynamic camera work. I also placed a much heavier emphasis on post-production, utilizing VFX and layered SFX to heighten the intensity of the combat.",
 		"img": "tb7.jpg",
 		"url": "https://www.youtube.com/embed/IdQMmZ71Bmk?si=zJjELShQgkC0S_xP"
 	},
@@ -16,7 +16,7 @@
 	"tb3": {
 		"title": "kessoku band -『忘れてやらない guitarhero COVER』",
 		"date": "Apr 2024 - May 2024",
-		"desc": "The focus for this project was on precision and attention to fine details since its an accurate recreation of a guitar performance. Each movement had to be frame-perfect to the audio beats. <br/><br/> Since I don't play the guitar personally, I asked many guitar-playing friends how they would approach certain sections, which helped refine hand positions and overall body movement. <br/><br/> Technically, I had to be comfortable with creating custom rig adjustments and using inverse kinematics (IK).",
+		"desc": "<u>Note: Video may not embed, depending on region.</u><br/><br/>The focus for this project was on precision and attention to fine details since its an accurate recreation of a guitar performance. Each movement had to be frame-perfect to the audio beats. <br/><br/> Since I don't play the guitar personally, I asked many guitar-playing friends how they would approach certain sections, which helped refine hand positions and overall body movement. <br/><br/> Technically, I had to be comfortable with creating custom rig adjustments and using inverse kinematics (IK).",
 		"img": "tb3.jpg",
 		"url": "https://www.youtube.com/embed/_uEzKYpAo58?si=zJjELShQgkC0S_xP"
 	},
