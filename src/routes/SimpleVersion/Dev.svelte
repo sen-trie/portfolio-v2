@@ -13,7 +13,7 @@
 			<div class="block-top">
 				<div class="flexbox block-title">
 					<h2 class="block-name">{project.name}</h2>
-					<h4><i>{project.year}</i></h4>
+					<h4 class="block-date"><i>{project.year}</i></h4>
 				</div>
 				<div class="block-ingredients">
 					{#each project.tech as tech}
@@ -60,8 +60,9 @@
 		border: 2px solid rgba(255, 255, 255, 0.2);
 		border-radius: var(--border-radius);
 
-		h3 {
-			padding-top: 8px;
+		.block-desc {
+			padding-top: 16px;
+			font-weight: 400;
 		}
 	}
 
@@ -95,6 +96,10 @@
 
 		.block-title {
 			justify-content: space-between;
+
+			.block-date {
+				color: rgba(255, 255, 255, 0.5);
+			}
 		}
 
 		.block-top {

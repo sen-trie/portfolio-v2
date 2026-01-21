@@ -41,7 +41,7 @@
 		<h1>Sentrie's Portfolio</h1>
 		<img src={images['light_art.jpg']} alt="art profile" />
 	</div>
-	<div class="text-block">
+	<div class="text-block flyIn" style:--delay="100ms">
 		<h2>About Me</h2>
 		<h3>
 			I'm a self-taught <strong>frontend web developer</strong> focused on building
@@ -257,6 +257,23 @@
 		}
 		100% {
 			transform: translate(0);
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.flyIn {
+			--delay: 0s;
+			transition-property: opacity, transform;
+			transition-duration: 0.5s;
+			transition-timing-function: ease-in-out;
+			opacity: 1;
+			transform: translateY(0);
+			transition-delay: var(--delay, 0s);
+
+			@starting-style {
+				opacity: 0;
+				transform: translateY(8px);
+			}
 		}
 	}
 </style>

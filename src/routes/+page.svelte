@@ -73,7 +73,7 @@
 		onclick={() => handleClick(selectedSide === 'left' ? 'right' : 'left')}
 	>
 		<div class="button-inner">
-			<div class="button-front flexbox">
+			<div class="button-front flexbox" data-side={selectedSide}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -92,7 +92,7 @@
 				</svg>
 				<p>Dev</p>
 			</div>
-			<div class="button-back flexbox">
+			<div class="button-back flexbox" data-side={selectedSide}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -281,6 +281,23 @@
 			font-weight: 700;
 			font-size: 16px;
 			color: white;
+			transition:
+				background-color 0.3s ease,
+				color 0.3s ease;
+
+			&[data-side='left'] {
+				&:hover {
+					background-color: color-mix(in oklab, #4e2d4a 50%, #ffffff 100%);
+					color: black;
+				}
+			}
+
+			&[data-side='right'] {
+				&:hover {
+					background-color: color-mix(in oklab, #054830 50%, #ffffff 100%);
+					color: black;
+				}
+			}
 		}
 
 		.button-back {

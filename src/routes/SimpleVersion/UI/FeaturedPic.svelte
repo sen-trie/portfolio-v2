@@ -1,12 +1,8 @@
 <script>
-	let { img, dim, url, openDialog } = $props();
+	let { img, key, openDialog } = $props();
 </script>
 
-<button
-	class="art-grid-div art-grid-item art-video"
-	onclick={(e) => openDialog(e, url)}
-	style={`aspect-ratio: ${dim[0]} / ${dim[1]};`}
->
+<button class="art-grid-div art-grid-item art-video" onclick={(e) => openDialog(e, key)}>
 	<img src={img} alt="Video thumbnail" />
 	<svg
 		class="icon icon-tabler icon-tabler-hand-click"

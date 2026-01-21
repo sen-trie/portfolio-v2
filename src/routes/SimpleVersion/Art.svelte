@@ -1,9 +1,11 @@
 <script>
 	import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 	import { getContext, onMount } from 'svelte';
-	import ArtSection from './ArtSection.svelte';
-	import VideoPic from './ClipsPic.svelte';
-	import FeaturedPic from './FeaturedPic.svelte';
+	import ArtSection from './UI/ArtSection.svelte';
+	import VideoPic from './UI/ClipsPic.svelte';
+	import FeaturedPic from './UI/FeaturedPic.svelte';
+	import ArtDialogue from './UI/ArtDialogue.svelte';
+	import featuredData from '$lib/db/art-video.json';
 
 	const images = getContext('images');
 	const videos = getContext('videos');
@@ -31,49 +33,41 @@
 		['vid', 'vid5', [1920, 1080], 'vid5.png', 'vid5T'],
 		['vid', 'vid4', [1920, 1080], 'vid4.png', 'vid4T'],
 		['vid', 'vid2', [1920, 1080], 'vid2.png', 'vid2T'],
-		['vid', 'vid3', [1920, 1080], 'vid3.png', 'vid3T'],
-		[
-			'link',
-			'tb5.jpg',
-			[1920, 1080],
-			'https://www.youtube.com/embed/RgBwLQty8B4?si=zJjELShQgkC0S_xP'
-		],
-		[
-			'link',
-			'tb3.jpg',
-			[1920, 1080],
-			'https://www.youtube.com/embed/_uEzKYpAo58?si=zJjELShQgkC0S_xP'
-		],
-		[
-			'link',
-			'tb1.png',
-			[1920, 1080],
-			'https://www.youtube.com/embed/vHGuVzc_z68?si=zJjELShQgkC0S_xP'
-		],
-		[
-			'link',
-			'tb2.png',
-			[2880, 1206],
-			'https://www.youtube.com/embed/1YzAhbeAiUE?si=zJjELShQgkC0S_xP'
-		]
+		['vid', 'vid3', [1920, 1080], 'vid3.png', 'vid3T']
 	];
 
 	const imgItems = artItems.filter((data) => data[0] === 'img');
 	const vidItems = artItems.filter((data) => data[0] === 'vid');
-	const linkItems = artItems.filter((data) => data[0] === 'link');
 
 	let showMoreImg = $state(false);
 	let showMoreVid = $state(false);
 	let showMoreLink = $state(false);
 
 	let dialogEl = $state(null);
-	let url = $state('');
+	let key = $state(null);
+	let isLoading = $state(true);
 
-	function openDialog(e, newUrl) {
+	const featureKeys = Object.keys(featuredData);
+
+	function cycleKeys(forwards = true) {
+		if (key === null) {
+			key = featureKeys[0];
+			return;
+		}
+
+		isLoading = true;
+		key =
+			featureKeys[
+				(featureKeys.indexOf(key) + (forwards ? 1 : -1) + featureKeys.length) % featureKeys.length
+			];
+	}
+
+	function openDialog(e, newKey) {
 		e.preventDefault();
 		if (!dialogEl) return;
 
-		url = newUrl;
+		key = newKey;
+		isLoading = true;
 		dialogEl.showModal();
 		disableBodyScroll(document.body, { reserveScrollBarGap: true });
 	}
@@ -81,7 +75,7 @@
 	function closeDialog() {
 		if (!dialogEl) return;
 
-		url = '';
+		key = '';
 		dialogEl.close();
 		enableBodyScroll(document.body);
 	}
@@ -98,8 +92,10 @@
 	showMore={showMoreLink}
 	toggleFn={() => (showMoreLink = !showMoreLink)}
 >
-	{#each linkItems as data}
-		<FeaturedPic img={images[`art/${data[1]}`]} dim={data[2]} url={data[3]} {openDialog} />
+	{#each Object.entries(featuredData) as data}
+		{#if data && data[1] && data[1].img}
+			<FeaturedPic img={images[`art/${data[1].img}`]} key={data[0]} {openDialog} />
+		{/if}
 	{/each}
 </ArtSection>
 
@@ -125,40 +121,16 @@
 </ArtSection>
 
 <dialog bind:this={dialogEl} onclick={(e) => e.target === dialogEl && closeDialog()}>
-	<button class="close-btn" onclick={closeDialog} aria-label="close-dialog">
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			width="20"
-			height="20"
-			viewBox="0 0 24 24"
-			stroke-width="2"
-			stroke="currentColor"
-			fill="none"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-		>
-			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-			<path d="M18 6l-12 12" />
-			<path d="M6 6l12 12" />
-		</svg>
-	</button>
-	<div class="dialog-content">
-		<div class="video-container">
-			<iframe
-				src={url}
-				title="YouTube video player"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-			></iframe>
-		</div>
-		<div class="video-info">
-			<h2>Rin's Solo Camp</h2>
-			<h4>2025/12/10</h4>
-
-			<h3>AAA</h3>
-		</div>
-	</div>
+	<ArtDialogue
+		{key}
+		content={featuredData[key]}
+		{closeDialog}
+		{isLoading}
+		{cycleKeys}
+		handleLoad={() => {
+			isLoading = false;
+		}}
+	/>
 </dialog>
 
 <style lang="scss">
@@ -174,66 +146,46 @@
 		filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
 	}
 
+	$transition-duration: 0.3s;
+
 	dialog {
 		border: none;
 		background: transparent;
 		padding: 16px 16px;
 		margin: auto;
 		filter: drop-shadow(0 0 16px black);
+		transition:
+			opacity $transition-duration ease,
+			display $transition-duration ease allow-discrete;
+		opacity: 0;
+
+		&[open] {
+			opacity: 1;
+		}
+
+		@starting-style {
+			&[open] {
+				opacity: 0;
+			}
+		}
 
 		&::backdrop {
-			background-color: rgba(0, 0, 0, 0.85);
+			background-color: rgba(0, 0, 0, 0.7);
 			backdrop-filter: blur(4px);
+			transition:
+				opacity $transition-duration ease,
+				backdrop-filter $transition-duration ease,
+				display $transition-duration ease allow-discrete;
+			opacity: 0;
 		}
 
-		.close-btn {
-			position: absolute;
-			z-index: 99;
-			right: 0;
-			top: 0;
-			background: black;
-			border: 2px solid hsla(0, 0%, 100%, 0.5);
-			border-radius: 50%;
-			width: 32px;
-			height: 32px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: #fff;
+		&[open]::backdrop {
+			opacity: 1;
 		}
 
-		.dialog-content {
-			position: relative;
-			display: flex;
-			width: 1200px;
-			max-height: calc(100vh - 4rem);
-
-			justify-content: space-between;
-			background-color: #1a1a1a;
-			border-radius: 1rem;
-			overflow: hidden;
-
-			.video-container {
-				position: relative;
-				width: 60%;
-				height: auto;
-
-				padding-bottom: 50%;
-				overflow: hidden;
-
-				iframe {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					border: none;
-				}
-			}
-
-			.video-info {
-				flex-grow: 1;
-				text-align: left;
+		@starting-style {
+			&[open]::backdrop {
+				opacity: 0;
 			}
 		}
 	}
