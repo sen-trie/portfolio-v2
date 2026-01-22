@@ -145,7 +145,7 @@
 					>
 						<div class="cover-wrapper flexbox">
 							<p>Explore Dev Work</p>
-							<img src={images['dev_pp.png']} alt="dev profile" />
+							<enhanced:img src={images['dev_pp.png'].default} alt="dev profile" />
 						</div>
 					</div>
 				{/if}
@@ -174,7 +174,7 @@
 					>
 						<div class="cover-wrapper flexbox">
 							<p>Explore Art Work</p>
-							<img src={images['art_pp.png']} alt="art profile" />
+							<enhanced:img src={images['art_pp.png'].default} alt="art profile" />
 						</div>
 					</div>
 				{/if}

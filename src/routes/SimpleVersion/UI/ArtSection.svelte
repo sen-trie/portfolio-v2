@@ -51,7 +51,7 @@
 		height: 100%;
 		padding: 32px 16px;
 		column-gap: 16px;
-		row-gap: 4px;
+		row-gap: 16px;
 
 		position: relative;
 		display: flex;
@@ -59,17 +59,20 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		overflow-x: hidden;
-	}
 
-	:global(.art-grid-item) {
-		position: relative;
-		z-index: 2;
-		height: 275px;
-		width: auto;
-		max-width: 45%;
-		display: block;
-		object-fit: cover;
-		margin-bottom: 10px;
+		:global(picture) {
+			height: 275px;
+			width: auto;
+			max-width: 45%;
+			filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
+		}
+
+		:global(picture img) {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			aspect-ratio: unset;
+		}
 	}
 
 	.show-more-btn {
@@ -97,15 +100,27 @@
 	}
 
 	@media (max-width: 768px) {
-		:global(.art-grid .art-grid-item) {
+		:global(.art-grid-div) {
 			max-width: unset !important;
-			height: 175px;
 		}
 
 		.art-grid {
 			padding: 20px 16px;
 			column-gap: 8px;
-			row-gap: 0px;
+			row-gap: 8px;
+
+			:global(picture) {
+				height: 150px;
+				width: auto;
+				max-width: 100%;
+			}
+
+			:global(picture img) {
+				width: auto;
+				height: 100%;
+				object-fit: contain;
+				aspect-ratio: unset;
+			}
 		}
 	}
 </style>

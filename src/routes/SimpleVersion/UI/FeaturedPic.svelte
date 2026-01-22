@@ -2,8 +2,12 @@
 	let { img, key, openDialog } = $props();
 </script>
 
-<button class="art-grid-div art-grid-item art-video" onclick={(e) => openDialog(e, key)}>
-	<img src={img} alt="Video thumbnail" />
+<button
+	class="art-grid-div art-grid-item art-video"
+	onclick={(e) => openDialog(e, key)}
+	aria-label="click"
+>
+	<enhanced:img src={img.default} alt="Video thumbnail" />
 	<svg
 		class="icon icon-tabler icon-tabler-hand-click"
 		width="56"
@@ -38,14 +42,6 @@
 		border: none;
 		background: none;
 		padding: 0;
-		width: 100%;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-		}
 
 		svg {
 			position: absolute;

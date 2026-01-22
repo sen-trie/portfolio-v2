@@ -5,6 +5,7 @@
 	// let { greenVisible } = $props();
 
 	const images = getContext('images');
+	const svgImages = getContext('svg');
 
 	let scrollY = $state(0);
 
@@ -37,9 +38,9 @@
 
 <div class="flexbox about-block content-block">
 	<div class="flexbox profile-blurb">
-		<img src={images['light_dev.jpg']} alt="dev profile" />
+		<enhanced:img src={images['light_dev.jpg'].default} alt="dev profile" />
 		<h1>Sentrie's Portfolio</h1>
-		<img src={images['light_art.jpg']} alt="art profile" />
+		<enhanced:img src={images['light_art.jpg'].default} alt="art profile" />
 	</div>
 	<div class="text-block flyIn" style:--delay="100ms">
 		<h2>About Me</h2>
@@ -65,11 +66,11 @@
 		<div class="flexbox social-links">
 			{#each Object.entries(socials) as social}
 				<a href={social[1]} target="_blank" aria-label="link" rel="noopener noreferrer">
-					<img class="social-link" src={images[`${social[0]}.svg`]} alt="{social[0]} logo" />
+					<img class="social-link" src={svgImages[`${social[0]}.svg`]} alt="{social[0]} logo" />
 				</a>
 			{/each}
 			<button onclick={() => copyText(discordUsername)} aria-label="copy discord username">
-				<img class="social-link" src={images[`discord.svg`]} alt="discord logo" />
+				<img class="social-link" src={svgImages[`discord.svg`]} alt="discord logo" />
 			</button>
 		</div>
 		{#if showCopied}
@@ -84,7 +85,7 @@
 				aria-label="link"
 				rel="noopener noreferrer"
 			>
-				<img class="social-link" src={images[`gmail.svg`]} alt="gmail logo" />
+				<img class="social-link" src={svgImages[`gmail.svg`]} alt="gmail logo" />
 			</a>
 			<p>backupsentrie@gmail</p>
 		</div>
@@ -119,11 +120,15 @@
 		border-radius: var(--border-radius);
 		overflow: hidden;
 
+		picture,
 		img {
 			height: 100%;
 			width: auto;
 			aspect-ratio: 1;
 			object-fit: contain;
+		}
+
+		picture {
 			background-color: #333;
 			box-sizing: content-box;
 
