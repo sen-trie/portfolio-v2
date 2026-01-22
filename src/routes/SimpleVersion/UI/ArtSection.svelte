@@ -71,7 +71,10 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+<<<<<<< HEAD
 			aspect-ratio: unset;
+=======
+>>>>>>> bb5f518e0f5eb12e75bbd84b925212787d7f3610
 		}
 	}
 
