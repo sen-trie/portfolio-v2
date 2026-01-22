@@ -71,6 +71,7 @@
 		cursor: pointer;
 		object-fit: cover;
 		inset: 0;
+		background: rgba(0, 0, 0, 0.3);
 	}
 
 	.art-grid-div {
