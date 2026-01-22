@@ -4,6 +4,7 @@
 	import devItems from '$lib/db/dev-items.json';
 
 	const images = getContext('images');
+	const svgImages = getContext('svg');
 </script>
 
 {#snippet visitLinks(project)}
@@ -30,7 +31,7 @@
 						<span class="flexbox">
 							<img
 								class="tech-svg"
-								src={images[`dev/${tech.toLowerCase()}.svg`]}
+								src={svgImages[`dev/${tech.toLowerCase()}.svg`]}
 								alt="{tech} logo"
 							/>
 							{tech}
@@ -41,7 +42,7 @@
 			<h3 class="block-desc">{@html project.desc}</h3>
 		</div>
 		<div class="block-pic flexbox">
-			<img src={images[`dev/${project.image}.png`]} alt={project.imageAlt} />
+			<enhanced:img src={images[`dev/${project.image}.png`].default} alt={project.imageAlt} />
 			<div class="desktop-link flexbox">
 				{@render visitLinks(project)}
 			</div>

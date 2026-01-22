@@ -27,12 +27,12 @@
 		['img', 'pic1.png', 2576, 1574],
 		['vid', 'vid_broom', [1920, 1080], 'broom_tb.jpg', 'vid2T'],
 		['vid', 'vid_laser', [1920, 1080], 'laser_tb.jpg', 'vid2T'],
-		['vid', 'vid7', [1920, 1080], 'vid7.png', 'vid7T'],
-		['vid', 'vid6', [1920, 1080], 'vid6.png', 'vid6T'],
-		['vid', 'vid5', [1920, 1080], 'vid5.png', 'vid5T'],
-		['vid', 'vid4', [1920, 1080], 'vid4.png', 'vid4T'],
-		['vid', 'vid2', [1920, 1080], 'vid2.png', 'vid2T'],
-		['vid', 'vid3', [1920, 1080], 'vid3.png', 'vid3T']
+		['vid', 'vid7', [1920, 1080], 'vid7.jpg', 'vid7T'],
+		['vid', 'vid6', [1920, 1080], 'vid6.jpg', 'vid6T'],
+		['vid', 'vid5', [1920, 1080], 'vid5.jpg', 'vid5T'],
+		['vid', 'vid4', [1920, 1080], 'vid4.jpg', 'vid4T'],
+		['vid', 'vid2', [1920, 1080], 'vid2.jpg', 'vid2T'],
+		['vid', 'vid3', [1920, 1080], 'vid3.jpg', 'vid3T']
 	];
 
 	const imgItems = artItems.filter((data) => data[0] === 'img');
@@ -45,6 +45,12 @@
 	let dialogEl = $state(null);
 	let key = $state(null);
 	let isLoading = $state(true);
+
+	const certainDate = new Date('2026-02-03T00:00:00');
+
+	if (new Date() < certainDate) {
+		delete featuredData['tb7'];
+	}
 
 	const featureKeys = Object.keys(featuredData);
 
@@ -108,14 +114,18 @@
 			vid={videos[`${data[1]}.mp4`]}
 			dim={data[2]}
 			webm={videos[`${data[1]}.webm`]}
-			tb={images[`art/${data[3]}`]}
+			tb={images[`art/${data[3]}`].default}
 		/>
 	{/each}
 </ArtSection>
 
 <ArtSection title={'Stills'} showMore={showMoreImg} toggleFn={() => (showMoreImg = !showMoreImg)}>
 	{#each imgItems as data}
-		<img class="art-grid-item art-img" src={images[`art/${data[1]}`]} alt="art img" />
+		<enhanced:img
+			class="art-grid-item art-img"
+			src={images[`art/${data[1]}`].default}
+			alt="art img"
+		/>
 	{/each}
 </ArtSection>
 
@@ -138,19 +148,17 @@
 </dialog>
 
 <style lang="scss">
-	:global(.art-grid-item) {
-		position: relative;
-		z-index: 2;
-		height: 275px;
-		width: auto;
-		max-width: 45%;
-		display: block;
-		object-fit: cover;
-		margin-bottom: 10px;
-		filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
-	}
-
 	$transition-duration: 0.3s;
+
+	:global(.art-grid-div) {
+		position: relative;
+		overflow: hidden;
+		max-width: 45%;
+
+		:global(picture) {
+			max-width: unset !important;
+		}
+	}
 
 	dialog {
 		height: 100dvh;

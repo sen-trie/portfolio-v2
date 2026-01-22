@@ -40,7 +40,7 @@
 		<source src={`${webm}#t=0`} type="video/webm" />
 		Your browser does not support the video tag.
 	</video>
-	<img bind:this={thumbEl} src={tb} alt="" class="video-thumb" />
+	<enhanced:img bind:this={thumbEl} src={tb} alt="" class="video-thumb" />
 	<svg
 		bind:this={svgEl}
 		class="icon icon-tabler icon-tabler-external-link"
@@ -67,22 +67,22 @@
 	:global(.art-grid-div video) {
 		height: inherit;
 		width: 100%;
+		height: 100%;
 		cursor: pointer;
 		object-fit: cover;
 		inset: 0;
 	}
 
 	.art-grid-div {
-		position: relative;
-		overflow: hidden;
-
+		picture,
 		img {
 			position: absolute;
-			width: 100%;
-			height: 100%;
+			width: unset;
+			height: unset;
 			object-fit: cover;
 			inset: 0;
 			pointer-events: none;
+			margin-bottom: 0;
 		}
 
 		svg {
