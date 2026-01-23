@@ -71,6 +71,7 @@
 		.block-desc {
 			padding-top: 16px;
 			font-weight: 400;
+			font-size: 18px;
 		}
 	}
 
@@ -171,6 +172,7 @@
 
 			.block-desc {
 				padding-top: 12px;
+				font-size: 15px;
 			}
 		}
 

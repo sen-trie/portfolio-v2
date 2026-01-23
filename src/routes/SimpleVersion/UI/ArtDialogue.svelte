@@ -159,6 +159,7 @@
 		}
 
 		.video-info {
+			color: white;
 			width: 40%;
 			text-align: left;
 			padding: 20px 28px;
