@@ -92,9 +92,10 @@
 	</div>
 
 	{#if scrollY < 100}
-		<div transition:fade={{ duration: 300 }} class="scroll-container">
+		<div transition:fade={{ duration: 300 }} class="scroll-container flexbox">
+			<h4>Scroll Down</h4>
 			<svg
-				fill="#000000"
+				fill="currentColor"
 				version="1.1"
 				id="Capa_1"
 				viewBox="0 0 30.727 30.727"
@@ -218,6 +219,11 @@
 			padding: 8px;
 			border-radius: var(--border-radius);
 			display: block;
+			transition: transform 0.3s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 
 		p {
@@ -244,6 +250,10 @@
 	.scroll-container {
 		position: absolute;
 		bottom: 38px;
+		gap: 4px;
+		display: flex;
+		flex-direction: column;
+		color: rgba(0, 0, 0, 0.7);
 
 		svg {
 			width: 24px;

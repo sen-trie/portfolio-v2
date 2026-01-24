@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="art-grid-div art-grid-item">
+<div class="art-grid-div art-grid-item flexbox">
 	<video bind:this={videoEl} width={dim[0]} height={dim[1]} controls playsinline preload="metadata">
 		<source src={`${vid}#t=0`} type="video/mp4" />
 		<source src={`${webm}#t=0`} type="video/webm" />
@@ -43,7 +43,7 @@
 	<enhanced:img bind:this={thumbEl} src={tb} alt="" class="video-thumb" />
 	<svg
 		bind:this={svgEl}
-		class="icon icon-tabler icon-tabler-external-link"
+		class="icon icon-tabler"
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		fill="transparent"
@@ -86,17 +86,8 @@
 			margin-bottom: 0;
 		}
 
-		svg {
-			position: absolute;
-			transform-origin: bottom right;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		.icon-tabler {
 			padding: 12px;
-			border: 2px solid hsla(44, 72%, 76%, 0.7);
-			background-color: hsla(0, 0%, 0%, 0.8);
-			border-radius: var(--border-radius);
-			pointer-events: none;
 		}
 	}
 </style>

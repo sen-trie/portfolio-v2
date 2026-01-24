@@ -3,13 +3,13 @@
 </script>
 
 <button
-	class="art-grid-div art-grid-item art-video"
+	class="art-grid-div art-grid-item art-video flexbox"
 	onclick={(e) => openDialog(e, key)}
 	aria-label="click"
 >
 	<enhanced:img src={img.default} alt="Video thumbnail" />
 	<svg
-		class="icon icon-tabler icon-tabler-hand-click"
+		class="icon icon-tabler"
 		width="56"
 		height="56"
 		viewBox="0 0 24 24"
@@ -36,24 +36,11 @@
 <style lang="scss">
 	.art-grid-div {
 		position: relative;
-		display: block;
+		display: flex;
 		overflow: hidden;
 		cursor: pointer;
 		border: none;
 		background: none;
 		padding: 0;
-
-		svg {
-			position: absolute;
-			transform-origin: bottom right;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			padding: 8px;
-			border: 2px solid hsla(44, 72%, 76%, 0.7);
-			background-color: hsla(0, 0%, 0%, 0.8);
-			border-radius: var(--border-radius);
-			pointer-events: none;
-		}
 	}
 </style>

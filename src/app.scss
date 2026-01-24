@@ -126,6 +126,34 @@ button {
 	font-weight: 600;
 }
 
+.icon-tabler {
+	position: absolute;
+	left: 50%;
+	translate: -50% 0;
+	padding: 8px;
+	border: 2px solid hsla(44, 72%, 76%, 0.7);
+	background-color: hsla(0, 0%, 0%, 0.8);
+	border-radius: var(--border-radius);
+	pointer-events: none;
+	transition: scale 0.3s ease;
+}
+
+.art-grid-div video,
+picture {
+	transition: scale 0.3s ease;
+}
+
+.art-grid-div:hover {
+	video,
+	picture {
+		scale: 1.05;
+	}
+
+	.icon-tabler {
+		scale: 1.15;
+	}
+}
+
 @media (max-width: 768px) {
 	.content-block {
 		padding: 0 12px;
