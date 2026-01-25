@@ -5,7 +5,7 @@
 		"tech": ["Svelte", "JavaScript"],
 		"repo": "https://github.com/sen-trie/basil-main",
 		"site": "https://www.basilclub.cafe/",
-		"image": "proj7",
+		"image": ["cafe0", "cafe1", "cafe2"],
 		"imageAlt": "Basil Club Recipe Project",
 		"year": "Nov 2025"
 	},
@@ -15,7 +15,7 @@
 		"tech": ["Threlte", "Three"],
 		"repo": "https://github.com/sen-trie/basil-club",
 		"site": "https://explore.basilclub.cafe/",
-		"image": "proj6",
+		"image": ["izakaya0", "izakaya1", "izakaya2", "izakaya4", "izakaya3"],
 		"imageAlt": "Basil Club 3D Project",
 		"year": "Jun 2025 - Nov 2025"
 	},
@@ -25,7 +25,7 @@
 		"tech": ["Svelte", "Tailwind", "TypeScript"],
 		"repo": "https://github.com/sen-trie/brushhub",
 		"site": "https://sen-trie.github.io/brushhub/",
-		"image": "proj5",
+		"image": ["brush0", "brush1", "brush2"],
 		"imageAlt": "BrushHub Project",
 		"year": "Nov 2024 - Feb 2025"
 	},
@@ -35,7 +35,7 @@
 		"tech": ["HTML", "CSS", "JavaScript"],
 		"repo": "https://github.com/sen-trie/nahidaQuest",
 		"site": "https://nahidaquest.com/",
-		"image": "proj1",
+		"image": ["nahi0", "nahi1", "nahi2", "nahi3", "nahi4"],
 		"imageAlt": "nahidaQuest Project",
 		"year": "Jan 2023 - Jun 2024"
 	},
@@ -45,7 +45,7 @@
 		"tech": ["MATLAB"],
 		"repo": "https://github.com/sen-trie/2d-heat-diffusion",
 		"site": null,
-		"image": "proj2",
+		"image": ["proj2"],
 		"imageAlt": "Matlab Project",
 		"year": "May 2024"
 	},
@@ -55,7 +55,7 @@
 		"tech": ["React", "JavaScript"],
 		"repo": "https://github.com/sen-trie/shopping-cart",
 		"site": "https://sen-trie.github.io/shopping-cart/",
-		"image": "proj3",
+		"image": ["vamp0", "vamp1", "vamp2"],
 		"imageAlt": "Storefront Project",
 		"year": "Jul 2023"
 	}

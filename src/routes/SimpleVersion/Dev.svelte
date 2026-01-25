@@ -1,9 +1,9 @@
 <script>
+	import DevCarousel from './UI/DevCarousel.svelte';
 	import { getContext } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import devItems from '$lib/db/dev-items.json';
 
-	const images = getContext('images');
 	const svgImages = getContext('svg');
 </script>
 
@@ -42,7 +42,7 @@
 			<h3 class="block-desc">{@html project.desc}</h3>
 		</div>
 		<div class="block-pic flexbox">
-			<enhanced:img src={images[`dev/${project.image}.png`].default} alt={project.imageAlt} />
+			<DevCarousel {project} />
 			<div class="desktop-link flexbox">
 				{@render visitLinks(project)}
 			</div>
@@ -125,19 +125,10 @@
 
 	.block-pic {
 		height: 100%;
-		width: 45%;
-		aspect-ratio: 1.27;
+		width: 48%;
 		flex-direction: column;
 		justify-content: flex-start;
 		gap: 16px;
-
-		img {
-			height: auto;
-			width: 100%;
-			aspect-ratio: 16 / 10;
-			object-fit: cover;
-			filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
-		}
 	}
 
 	.desktop-link,
@@ -150,6 +141,7 @@
 			background-color: #e19898;
 			color: #1c0e1a;
 			transition: all 0.3s ease;
+			font-size: 14px;
 
 			&:hover {
 				background-color: #1c0e1a;
@@ -187,23 +179,26 @@
 			}
 		}
 
-		.block-name {
-			max-width: 50%;
-		}
-
 		.block-pic {
 			height: unset;
 			width: 100%;
 			aspect-ratio: unset;
 			margin-bottom: 12px;
-
-			img {
-				aspect-ratio: 16 / 9;
-			}
 		}
 
 		.block-text {
 			width: 100%;
+
+			.block-title {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.block-name {
+				max-width: 100%;
+				margin-bottom: 4px;
+				margin-top: -8px;
+			}
 
 			.block-date {
 				font-size: 12px;

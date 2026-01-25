@@ -1,7 +1,7 @@
 {
 	"name": "vault",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --host",
@@ -29,6 +29,7 @@
 		"prettier-plugin-svelte": "^3.3.3",
 		"sass-embedded": "^1.97.2",
 		"svelte": "^5.0.0",
+		"svelte-carousel": "^1.0.25",
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
