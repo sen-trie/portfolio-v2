@@ -11,7 +11,7 @@
 	},
 	{
 		"name": "Basil Club - 3D Webapp",
-		"desc": "An interactive 3D café. Contains multiple interactables and references, inspired by personal experiences.<br/><br/>I wanted to explore creative web development, especially since I had prior experience in 3D software. The project taught me how to optimize 3D assets for performance, and how to create an immersive experience.",
+		"desc": "An interactive 3D café. Contains multiple interactables and references, inspired by personal experiences.<br/><br/>I wanted to explore creative web development, especially since I had prior experience in 3D software. The project taught me how to create an immersive experience, while optimizing assets for performance.",
 		"tech": ["Threlte", "Three"],
 		"repo": "https://github.com/sen-trie/basil-club",
 		"site": "https://explore.basilclub.cafe/",

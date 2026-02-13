@@ -46,12 +46,6 @@
 	let key = $state(null);
 	let isLoading = $state(true);
 
-	const certainDate = new Date('2026-02-03T00:00:00');
-
-	if (new Date() < certainDate) {
-		delete featuredData['tb7'];
-	}
-
 	const featureKeys = Object.keys(featuredData);
 
 	function cycleKeys(forwards = true) {

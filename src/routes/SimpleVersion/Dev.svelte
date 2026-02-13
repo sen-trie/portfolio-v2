@@ -8,7 +8,7 @@
 </script>
 
 {#snippet visitLinks(project)}
-	<a class="visit-link click-button" href={project.repo} target="_blank">Visit Repo</a>
+	<a class="visit-link click-button" href={project.repo} target="_blank">Source Code</a>
 	{#if project.site}
 		<a class="visit-link click-button" href={project.site} target="_blank">Visit Site</a>
 	{/if}

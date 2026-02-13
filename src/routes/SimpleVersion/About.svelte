@@ -39,7 +39,7 @@
 <div class="flexbox about-block content-block">
 	<div class="flexbox profile-blurb">
 		<enhanced:img src={images['light_dev.jpg'].default} alt="dev profile" />
-		<h1>Sentrie's Portfolio</h1>
+		<h1>@sentrie</h1>
 		<enhanced:img src={images['light_art.jpg'].default} alt="art profile" />
 	</div>
 	<div class="text-block flyIn" style:--delay="100ms">
