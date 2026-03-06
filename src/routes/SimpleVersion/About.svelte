@@ -39,18 +39,18 @@
 <div class="flexbox about-block content-block">
 	<div class="flexbox profile-blurb">
 		<enhanced:img src={images['light_dev.jpg'].default} alt="dev profile" />
-		<h1>@sentrie</h1>
+		<h2>@sentrie</h2>
 		<enhanced:img src={images['light_art.jpg'].default} alt="art profile" />
 	</div>
 	<div class="text-block flyIn" style:--delay="100ms">
 		<h2>About Me</h2>
 		<h3>
-			I'm a self-taught <strong>frontend web developer</strong> focused on building
+			I'm a <strong>frontend web developer</strong> focused on building
 			<u>clean, functional interfaces</u>. I enjoy <u>learning through projects</u> and consistently
 			push myself to pick up new frameworks, programming languages, and development methods as I
 			work.
 			<br /><br />
-			Alongside my dev work, I'm also a self-taught <strong>3D animator</strong>,
+			Alongside my dev work, I'm also a <strong>3D animator</strong>,
 			<u>specializing in character animation</u>. What started with a few tutorials turned into a
 			love for
 			<u>storytelling through movement</u>. It's a process that has taught me to be patient and to
@@ -93,7 +93,7 @@
 
 	{#if scrollY < 100}
 		<div transition:fade={{ duration: 300 }} class="scroll-container flexbox">
-			<h4>Scroll Down</h4>
+			<h4 class="scroll-down">Scroll Down</h4>
 			<svg
 				fill="currentColor"
 				version="1.1"
@@ -114,6 +114,7 @@
 <style lang="scss">
 	.profile-blurb {
 		height: 80px;
+		max-height: 8dvh;
 		width: fit-content;
 		gap: 20px;
 		border: 2px solid rgba(0, 0, 0, 0.3);
@@ -155,7 +156,7 @@
 		background-color: #f7f7f7;
 		border-radius: var(--border-radius);
 		border: 2px solid rgba(0, 0, 0, 0.2);
-		max-height: 60dvh;
+		max-height: 50dvh;
 		overflow-y: auto;
 
 		h2 {
@@ -179,7 +180,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		width: 100%;
-		margin: 72px 0 16px;
+		margin: 64px 0 16px;
 		gap: 8px;
 		align-items: center;
 
@@ -213,7 +214,7 @@
 		}
 
 		.social-link {
-			width: 44px;
+			aspect-ratio: 1;
 			height: 44px;
 			background-color: wheat;
 			padding: 8px;
@@ -304,7 +305,7 @@
 		.text-block {
 			margin-top: 24px;
 			padding: 20px 16px;
-			max-height: 50dvh;
+			max-height: 55dvh;
 		}
 
 		.social-block {
@@ -339,6 +340,10 @@
 		.scroll-container svg {
 			width: 16px;
 			height: 16px;
+		}
+
+		.scroll-down {
+			display: none;
 		}
 	}
 </style>

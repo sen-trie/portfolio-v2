@@ -411,6 +411,11 @@
 			}
 		}
 
+		.notebook-div {
+			will-change: clip-path;
+			transform: translateZ(0);
+		}
+
 		.main-art {
 			background-color: #054830;
 			right: 0;
