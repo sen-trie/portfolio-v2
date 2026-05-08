@@ -53,8 +53,6 @@
 	});
 
 	function handleClick(side) {
-		const instantScroll = clicked;
-
 		clicked = true;
 		selectedSide = side;
 
@@ -63,9 +61,10 @@
 			replaceState(window.location.pathname + hash);
 		}
 
-		greenSection?.scrollIntoView({
-			behavior: instantScroll ? 'instant' : 'smooth',
-			block: 'start'
+		// After state update, restore scroll to top of greenSection without user seeing movement
+		requestAnimationFrame(() => {
+			const top = greenSection.getBoundingClientRect().top + window.scrollY;
+			window.scrollTo({ top, behavior: 'instant' });
 		});
 	}
 </script>
@@ -227,6 +226,7 @@
 
 		&.main {
 			min-height: 100dvh;
+			overflow-anchor: none;
 			transition: height 0.6s ease;
 		}
 	}

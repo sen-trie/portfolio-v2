@@ -25,14 +25,15 @@
 		['img', 'pic2.png', 1535, 861],
 		['img', 'pic6.webp', 1920, 1080],
 		['img', 'pic1.png', 2576, 1574],
-		['vid', 'vid_broom', [1920, 1080], 'broom_tb.jpg', 'vid2T'],
-		['vid', 'vid_laser', [1920, 1080], 'laser_tb.jpg', 'vid2T'],
-		['vid', 'vid7', [1920, 1080], 'vid7.jpg', 'vid7T'],
-		['vid', 'vid6', [1920, 1080], 'vid6.jpg', 'vid6T'],
-		['vid', 'vid5', [1920, 1080], 'vid5.jpg', 'vid5T'],
-		['vid', 'vid4', [1920, 1080], 'vid4.jpg', 'vid4T'],
-		['vid', 'vid2', [1920, 1080], 'vid2.jpg', 'vid2T'],
-		['vid', 'vid3', [1920, 1080], 'vid3.jpg', 'vid3T']
+		['vid', 'vid_misty', [1920, 1080], 'vid_misty.jpg'],
+		['vid', 'vid_broom', [1920, 1080], 'broom_tb.jpg'],
+		['vid', 'vid_laser', [1920, 1080], 'laser_tb.jpg'],
+		['vid', 'vid7', [1920, 1080], 'vid7.jpg'],
+		['vid', 'vid6', [1920, 1080], 'vid6.jpg'],
+		['vid', 'vid5', [1920, 1080], 'vid5.jpg'],
+		['vid', 'vid4', [1920, 1080], 'vid4.jpg'],
+		['vid', 'vid2', [1920, 1080], 'vid2.jpg'],
+		['vid', 'vid3', [1920, 1080], 'vid3.jpg']
 	];
 
 	const imgItems = artItems.filter((data) => data[0] === 'img');

@@ -63,6 +63,20 @@
 		<div class="video-info">
 			<h2>{content['title']}</h2>
 			<h4><i>{content['date']}</i></h4>
+			{#if content['url']}
+				<a
+					target="_blank"
+					href={content['url'].replace('/embed/', '/watch?v=').replace(/[?&]si=[^&]+/, '')}
+				>
+					<u>
+						{content['url']
+							.replace('/embed/', '/watch?v=')
+							.replace(/[?&]si=[^&]+/, '')
+							.replace('https://', '')}
+					</u>
+				</a>
+			{/if}
+			<br />
 			<h3>{@html content['desc']}</h3>
 		</div>
 
@@ -168,10 +182,15 @@
 			-webkit-overflow-scrolling: touch;
 
 			h4 {
-				margin: 6px 0 20px;
+				margin: 6px 0 16px;
 				padding-bottom: 12px;
 				border-bottom: 2px solid white;
 				color: rgba(255, 255, 255, 0.5);
+			}
+
+			a {
+				margin-bottom: 8px;
+				display: inline-block;
 			}
 
 			h3 {

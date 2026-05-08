@@ -47,8 +47,7 @@
 		<h3>
 			I'm a <strong>frontend web developer</strong> focused on building
 			<u>clean, functional interfaces</u>. I enjoy <u>learning through projects</u> and consistently
-			push myself to pick up new frameworks, programming languages, and development methods as I
-			work.
+			push myself to pick up development methods as I work.
 			<br /><br />
 			Alongside my dev work, I'm also a <strong>3D animator</strong>,
 			<u>specializing in character animation</u>. What started with a few tutorials turned into a
@@ -57,8 +56,7 @@
 			focus on the tiny details that make a story feel alive and believable.
 			<br /><br />
 			Personally, I'm at my best when I can blend creativity with technical precision. Most of my work
-			is about taking a creative vision and building the systems needed to make it a reality, keeping
-			things simple and reliable along the way.
+			is about taking a creative vision and building the systems needed to make it a reality.
 		</h3>
 	</div>
 	<div class="social-block">
