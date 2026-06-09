@@ -55,8 +55,8 @@
 			<u>storytelling through movement</u>. It's a process that has taught me to be patient and to
 			focus on the tiny details that make a story feel alive and believable.
 			<br /><br />
-			Personally, I'm at my best when I can blend creativity with technical precision. Most of my work
-			is about taking a creative vision and building the systems needed to make it a reality.
+			I'm at my best when I can blend creativity with technical precision. Most of my work is about taking
+			a creative vision and building the systems needed to make it a reality.
 		</h3>
 	</div>
 	<div class="social-block">

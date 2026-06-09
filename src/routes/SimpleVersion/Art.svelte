@@ -10,6 +10,7 @@
 	const videos = getContext('videos');
 
 	const artItems = [
+		['img', 'fairy.jpg', 1300, 1630],
 		['img', 'pic12.png', 1874, 970],
 		['img', 'pic11.webp', 768, 768],
 		['img', 'pic13.jpg', 1151, 1151],
@@ -25,6 +26,7 @@
 		['img', 'pic2.png', 1535, 861],
 		['img', 'pic6.webp', 1920, 1080],
 		['img', 'pic1.png', 2576, 1574],
+		['vid', 'vid_icehero', [1920, 1080], 'vid_icehero.jpg'],
 		['vid', 'vid_misty', [1920, 1080], 'vid_misty.jpg'],
 		['vid', 'vid_broom', [1920, 1080], 'broom_tb.jpg'],
 		['vid', 'vid_laser', [1920, 1080], 'laser_tb.jpg'],
